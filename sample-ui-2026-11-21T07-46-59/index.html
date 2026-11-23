@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sample_ui</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><img src="./assets/brand-logo.svg" alt="Logo"/><span>sample_ui</span></div>
+      <button class="nav-item active" data-tab="overview">Pulpit Główny</button>
+      <button class="nav-item" data-tab="analytics">Analityka i KPI</button>
+      <button class="nav-item" data-tab="assets">Wygenerowane Grafiki</button>
+      <button class="nav-item" data-tab="tokens">Tokeny Designu</button>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div class="brand"><img src="./assets/brand-logo.svg" alt="Logo"/><span>sample_ui</span></div>
+        <div style="display:flex;gap:10px;">
+          <button id="toggle-hero-src" class="btn btn-ghost">Pokaż obraz źródłowy</button>
+          <button class="btn btn-primary">Rozpocznij</button>
+        </div>
+      </header>
+      <main class="content">
+        <section class="hero">
+          <div>
+            <span class="pill">Wygenerowano z obrazu · LIGHT · suede</span>
+            <h1>Interfejs dopasowany do Twojej inspiracji wizualnej</h1>
+            <p>Analiza pikseli (1024×637px): wykryto motyw jasny (Light Mode), kontrast 32/100, ostrość krawędzi 24/100 oraz strukturę: górny pasek nawigacji, panel boczny (sidebar), siatka 3-kolumnowa. Dominujące barwy: #c8cbd4, #e6ecf4, #a6aab5, #868a98.</p>
+            <div class="swatches">
+              <span class="swatch"><span class="swatch-dot" style="background:#c8cbd4"></span>#c8cbd4</span><span class="swatch"><span class="swatch-dot" style="background:#e6ecf4"></span>#e6ecf4</span><span class="swatch"><span class="swatch-dot" style="background:#a6aab5"></span>#a6aab5</span><span class="swatch"><span class="swatch-dot" style="background:#868a98"></span>#868a98</span><span class="swatch"><span class="swatch-dot" style="background:#687b7a"></span>#687b7a</span><span class="swatch"><span class="swatch-dot" style="background:#6c5763"></span>#6c5763</span>
+            </div>
+          </div>
+          <img id="hero-img" class="hero-visual" src="./assets/hero-artwork.svg" data-vector="./assets/hero-artwork.svg" data-source="./assets/source-hero.png" alt="Hero Graphic"/>
+        </section>
+
+        <section class="grid">
+          <div class="card" style="background-image:url('./assets/card-mesh.svg');background-size:cover;">
+            <div class="card-label">Kontrast sceny</div>
+            <div class="card-value">32/100</div>
+          </div>
+          <div class="card" style="background-image:url('./assets/card-mesh.svg');background-size:cover;">
+            <div class="card-label">Materiał haptyczny</div>
+            <div class="card-value" style="font-size:20px;">suede</div>
+          </div>
+          <div class="card" style="background-image:url('./assets/card-mesh.svg');background-size:cover;">
+            <div class="card-label">Rozmycie szkła</div>
+            <div class="card-value">25px</div>
+          </div>
+          
+        </section>
+
+        <section class="gallery">
+          <div class="card">
+            <div class="card-label" style="margin-bottom:10px;">Wygenerowana grafika Hero (SVG)</div>
+            <img src="./assets/hero-artwork.svg" alt="Generated Hero SVG"/>
+          </div>
+          <div class="card">
+            <div class="card-label" style="margin-bottom:10px;">Oryginalna referencja (PNG)</div>
+            <img src="./assets/source-hero.png" alt="Source Reference"/>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

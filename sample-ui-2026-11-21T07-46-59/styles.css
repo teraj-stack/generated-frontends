@@ -1,0 +1,81 @@
+:root {
+  --bg: #dee0e6;
+  --surface: #f6f6f8;
+  --accent: #e6ecf4;
+  --accent-2: #c8cbd4;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: rgba(15,23,42,0.12);
+  --blur: 25px;
+  --elev: 18px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 42%), var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+.shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.sidebar {
+  border-right: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(var(--blur));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+.brand img { width: 34px; height: 34px; border-radius: 10px; }
+.nav-item {
+  padding: 10px 12px; border-radius: 12px; color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500;
+  border: 1px solid transparent; transition: all 0.2s ease; cursor: pointer; background: transparent; text-align: left;
+}
+.nav-item.active, .nav-item:hover {
+  color: var(--text); background: color-mix(in srgb, var(--accent) 16%, transparent); border-color: color-mix(in srgb, var(--accent) 38%, transparent);
+}
+.main { display: flex; flex-direction: column; }
+.topbar {
+  display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;
+  border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(var(--blur)); position: sticky; top: 0; z-index: 10;
+}
+.btn {
+  padding: 9px 16px; border-radius: 12px; border: 1px solid var(--border); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); opacity: 0.94; }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #090d16; border: none; }
+.btn-ghost { background: var(--surface); color: var(--text); }
+.content { padding: 24px; max-width: 1240px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.hero {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; padding: 26px; border-radius: 24px;
+  background: var(--surface); border: 1px solid var(--border); box-shadow: 0 20px 44px rgba(0,0,0,0.22);
+  align-items: center;
+}
+.hero h1 { margin: 8px 0 12px; font-size: 28px; line-height: 1.15; }
+.hero p { margin: 0 0 18px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.hero-visual { width: 100%; border-radius: 18px; border: 1px solid var(--border); display: block; }
+.pill {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent);
+}
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card {
+  padding: 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.card-label { font-size: 12px; color: var(--muted); }
+.card-value { font-size: 26px; font-weight: 700; margin-top: 6px; }
+.swatches { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.swatch { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 8px; border: 1px solid var(--border); font-size: 11px; font-family: monospace; }
+.swatch-dot { width: 12px; height: 12px; border-radius: 4px; }
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; border: 1px solid var(--border); }
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .hero, .grid, .gallery { grid-template-columns: 1fr; }
+}
